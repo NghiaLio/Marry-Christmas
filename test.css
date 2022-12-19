@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap');
+body{
+    margin: 0;
+    
+}
+/* tạo thư */
+#letter{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color:azure;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+#letter .box{
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 37vh;
+    background-color: azure;
+    border: 15px solid aqua;
+    border-radius: 15px;
+}
+.feetbox .hr1{
+    position:absolute;
+    top: 45px;
+    left: -20px;
+    width:50%;
+    height: 15px;
+    background-color: aqua;
+    border: none;
+    transform: rotate(30deg);
+}
+.feetbox .hr2{
+    position:absolute;
+    top: 45px;
+    right: -20px;
+    width:50%;
+    height: 15px;
+    background-color: aqua;
+    border: none;
+    transform: rotate(-30deg);
+}
+#letter h1{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: red;
+    font-weight: 700;
+    margin: 0;
+}
+#letter h5{
+    position: absolute;
+    top: 80%;
+    color: red;
+    font-size: 16px;
+}
+
+/* tạo trái tym */
+.tym{
+    position: relative;
+    top: 35%;
+    width: 60px;
+    height: 60px;
+    background: red;
+    transform: rotate(-45deg);
+}
+.tym::before{
+    position: absolute;
+    content: '';
+    width: 60px;
+    height:60px;
+    top: -50%;
+    background-color: red;
+    border-radius: 50px;
+}
+.tym::after{
+    position: absolute;
+    content: '';
+    width: 60px;
+    height:60px;
+    right: -50%;
+    background-color: red;
+    border-radius: 50px;
+}
+/* tuyết rơi giáng sih */
+/* nền */
+#christmas{
+    display: ;
+}
+#container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image:url('https://o.vdoc.vn/data/image/2020/12/11/hinh-nen-giang-sinh-16.jpg');
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container h1{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    margin: 0;
+    font-size:60px;
+    font-family: 'Snowburst One', cursive;
+    animation:h1animation 4s ease-in-out  infinite alternate;
+}
+@keyframes h1animation{
+    0%{
+        transform: translate(0,0);
+        opacity: 0.5;
+    }
+    50%{
+        transform: translateY(-30px);
+        opacity: 2;
+    }
+    100%{
+        transform: translateY(30px);
+        opacity: 2;
+    }
+}
+/* tuyết rơi */
+.snow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    background-image: url('https://cdn-icons-png.flaticon.com/128/3292/3292071.png');
+    background-size: cover;
+    animation: animationSnow 4s ease-in-out infinite;
+}
+@keyframes animationSnow{
+    0%{
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(100px, 90vh);
+        opacity: 0;
+    }
+}
+/* slider */
+#container .slider{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    transform-style: preserve-3d;
+    animation: rorate 30s linear infinite;
+    
+}
+@keyframes rorate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.slider span{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(270px);
+    
+}
+.slider span img{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0px 5px 0px red;
+    border-radius: 10%;
+    object-fit: cover;
+    transition: 2s;
+}
+.slider span:hover img{
+    transform: translateY(-50px) scale(1.2);
+}
+.audio{
+    position: absolute;
+    top:5%;
+    
+}
